@@ -1,0 +1,15 @@
+<!--<he we user the built-in login in the urls file 
+we don't have to render a template for the /login it's made automatically by
+Django-->
+{% extends 'main/base.html' %}
+{% block title %}Login Page{% endblock  %}
+{% load crispy_forms_tags %}
+{% block content %} 
+<form method="post">
+{% csrf_token %}
+{{form|crispy}}
+<p>Don't you have an account ? Create one <a href="/sign-up">Here</a>!</p>
+<button class="btn btn-success" type="submit">Login</button>
+</form>
+
+{% endblock  %}
